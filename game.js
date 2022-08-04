@@ -20,7 +20,7 @@ function nextSequence() {
 }
 
 $(".btn").on("click", function(event) {
-  if(level === -1) nextSequence();
+  if(level===-1) nextSequence();
 
   else{
     var userChosenColour = this.id;
@@ -35,7 +35,7 @@ $(".btn").on("click", function(event) {
 })
 
 $(document).keypress(function() {
-  if (level === -1) nextSequence();
+  if (level===-1) nextSequence();
 });
 
 function makeSound(sound) {
