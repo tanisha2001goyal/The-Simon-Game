@@ -32,7 +32,7 @@ $(".btn").on("click", function(event) {
     makeSound(this.id);
     animatePress(this.id);
   }
-})
+});
 
 $(document).keypress(function() {
   if (level===-1) nextSequence();
