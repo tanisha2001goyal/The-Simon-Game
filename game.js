@@ -20,14 +20,18 @@ function nextSequence() {
 }
 
 $(".btn").on("click", function(event) {
-  var userChosenColour = this.id;
-  userClickedPattern.push(userChosenColour);
+  if(level === -1) nextSequence();
 
-  var len = userClickedPattern.length;
-  checkAnswer(len - 1);
+  else{
+    var userChosenColour = this.id;
+    userClickedPattern.push(userChosenColour);
 
-  makeSound(this.id);
-  animatePress(this.id);
+    var len = userClickedPattern.length;
+    checkAnswer(len - 1);
+
+    makeSound(this.id);
+    animatePress(this.id);
+  }
 })
 
 $(document).keypress(function() {
@@ -82,7 +86,7 @@ function checkAnswer(currentLevel) {
       $("body").removeClass("game-over");
     }, 200);
 
-    $("h1").text("Game Over, Press Any Key to Restart");
+    $("h1").text("Game Over, Press Any Key/Tile to Restart");
 
     startOver();
 
